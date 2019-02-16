@@ -1,14 +1,18 @@
 body{
 	width: auto;
+	height: auto;
 	padding: 10px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 #Table1{
-	width: 350px;
+	width:auto;
+	height:auto
 	padding: 20px;
 	margin-top: 20px;
+	margin-left: 5px;
+	margin-right:5px;
 }
 
 ol{
@@ -17,8 +21,10 @@ ol{
 
 li{
 	width:auto;
-	border: 1px solid blackl
+	height: auto;
 	padding: 15px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 td{
@@ -26,7 +32,7 @@ td{
 }
 
 input{
-	height:80px;
+	height: auto;
 }
 
 input:hover{
@@ -34,7 +40,7 @@ input:hover{
 }
 
 textarea{
- 	height:80px;
+ 	height: auto;
  }
 
  textarea:hover{
@@ -43,6 +49,7 @@ textarea{
 
 #Send{
 	width: auto;
+	height: auto;
 }
 
 #LitleNote{
@@ -65,5 +72,13 @@ textarea{
 
 #Exemple{
 	width: auto;
+	height: auto;
 	font-style: italic;
 }
+
+#buttons1{
+	width: auto;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+}	
