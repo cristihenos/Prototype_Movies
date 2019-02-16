@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adauga filmele tale preferate!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+      <h3 class="text-center">Adauga Filmele tale preferate!</h3>
+      <br>
+      <form action="filmelemele.html" id="add-movie-form" method="POST" >
+            <table id="Table1" class="table table-sm table-dark">
+                <tr>
+            <td>Nume Film:</td>
+            <td><input name="movie" type="text" class="form-control form-control-sm"></td>
+                 </tr>
+            <tr><td>Anul aparitiei:</td>
+            <td><input name="years" type="text" maxlength="4" id="Field-years" class="form-control form-control-sm"></td>
+                </tr>
+            <tr><td>Gen:</td>
+              <td><select name="gender" class="form-control form-control-sm">
+                  <option value="Actiune">Actiune</option>
+                  <option value="Aventuri" selected="">Aventuri</option>
+                  <option value="Horror">Horror</option>
+                  <option value="Familie">Familie</option>
+                  <option value="Comedie">Comedie</option>
+                  <option value="Dragoste">Dragoste</option>
+                  <option value="Triller">Triller</option>
+                    </select></td>
+            </tr>
+            <tr>
+              <td>Notita personala <p class="small">Max. 50 de caractere!</p></td>
+              <td><textarea name="SortDescription" maxlength="51" class="form-control form-control-sm"></textarea></td>
+            </tr>
+            <tr><td>Adauga o nota:</td>
+                <td><select name="scoring" class="form-control form-control-sm">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" selected="">5</option>
+                    </select></td>
+                </tr>
+              <tr><td colspan="2"><button type="submit" class="btn btn-primary" id="Send" >Trimite</button></td>
+            </tr>
+         </table>
+      </form>
+      <br>
+      <div id="Message1"></div>
+      <br>
+      
+      <br>
+      <div><button class="btn btn-primary" id="remove">Remove</button>
+           <button class="btn btn-primary" id="printOne" >Printeaza</button>
+         </div><br>
+      <ol id="ListOfmovies"></ol>
+      
+      
+      
+  </body>
+<script src="jsCore1.js"></script>
+</html>
+
+
