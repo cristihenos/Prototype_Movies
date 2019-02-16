@@ -9,8 +9,8 @@ body{
 #Table1{
 	padding: 20px;
 	margin-top: 20px;
-	margin-left: 5px;
-	margin-right:5px;
+	margin-left: auto;
+	margin-right:auto;
 }
 
 ol{
@@ -47,8 +47,7 @@ textarea{
  }
 
 #Send{
-	width: ;
-	
+	width: 250px;
 }
 
 #LitleNote{
