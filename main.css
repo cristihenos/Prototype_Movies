@@ -8,7 +8,7 @@ body{
 }
 
 #Table1{
-	width: 700px;
+
 	padding: 20px;
 	margin-top: 20px;
 	margin-right: auto;
@@ -28,14 +28,12 @@ li{
 }
 
 td{
-	height: 50px;
 	padding: 10px;
 	text-align: center;
 }
 
 input{
-	width: 550px;
-	height:50px;
+	height:70px;
 }
 
 input:hover{
@@ -43,7 +41,6 @@ input:hover{
 }
 
 textarea{
- 	width: 550px;
  	height:50px;
  }
 
