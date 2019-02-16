@@ -27,6 +27,11 @@ li{
     padding: 15px;
 }
 
+i{
+    width: 300px;
+}
+
+
 td{
     height: 40px;
     text-align: center;
