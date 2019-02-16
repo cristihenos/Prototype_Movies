@@ -10,16 +10,16 @@ body{
 #Table1{
 
 	padding: 20px;
-	margin-top: 20px;
+	margin-top: auto;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 ol{
 
-    padding: 15px;
-    margin-right: auto;
-    margin-left: auto;
+       padding: 15px;
+       margin-right: auto;
+       margin-left: auto;
 }
 
 li{
@@ -32,25 +32,13 @@ td{
 	text-align: center;
 }
 
-input{
-	height:70px;
-}
-
 input:hover{
 	background-color: #F3F781;
 }
 
-textarea{
- 	height:50px;
- }
-
  textarea:hover{
  	background-color: #F3F781;
  }
-
-#Send{
-	width: 350px;
-}
 
 #LitleNote{
 	position: sticky;
