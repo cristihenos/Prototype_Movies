@@ -9,6 +9,7 @@ body{
 #Table1{
 	padding: 20px;
 	margin-top: 20px;
+	font-size: 30px;
 }
 
 ol{
@@ -25,11 +26,6 @@ li{
 
 td{
 	text-align: center;
-}
-
-input{
-	padding: 25px;
-	
 }
 
 input:hover{
@@ -73,8 +69,10 @@ textarea{
 }
 
 #buttons1{
+	display: flex;
+	justify-content:space-around;
 	width: auto;
 	height: auto;
-	padding: 10px;
+	padding: 20px;
 	margin: auto;
 }	
