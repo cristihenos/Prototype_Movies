@@ -10,23 +10,20 @@ body{
 }
 
 ol{
-    padding: 15px;
+        padding: 15px;
 }
 
 li{
-	width: 350px;
 	border: 1px solid blackl
 	padding: 15px;
 }
 
 td{
-	height: 60px;
 	text-align: center;
 }
 
 input{
-	width: 550px;
-	height:50px;
+	height:80px;
 }
 
 input:hover{
@@ -34,8 +31,7 @@ input:hover{
 }
 
 textarea{
- 	width: 550px;
- 	height:50px;
+ 	height:80px;
  }
 
  textarea:hover{
@@ -43,7 +39,7 @@ textarea{
  }
 
 #Send{
-	width: 150px;
+	width: auto;
 }
 
 #LitleNote{
