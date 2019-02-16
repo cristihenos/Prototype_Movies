@@ -8,7 +8,6 @@ body{
 
 #Table1{
 	width:auto;
-	height:auto
 	padding: 20px;
 	margin-top: 20px;
 	margin-left: 5px;
@@ -32,6 +31,7 @@ td{
 }
 
 input{
+	width: 250px;
 	height: auto;
 }
 
@@ -48,8 +48,8 @@ textarea{
  }
 
 #Send{
-	width: auto;
-	height: auto;
+	width: ;
+	
 }
 
 #LitleNote{
