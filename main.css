@@ -2,15 +2,13 @@ body{
 	width: auto;
 	height: auto;
 	padding: 10px;
-	margin-left: 45px;
-	margin-right: 45px;
+	margin-left: 35px;
+	margin-right: 35px;
 }
 
 #Table1{
 	padding: 20px;
 	margin-top: 20px;
-	margin-left: auto;
-	margin-right:auto;
 }
 
 ol{
@@ -30,8 +28,8 @@ td{
 }
 
 input{
-	width: 250px;
-	height: auto;
+	padding: 25px;
+	
 }
 
 input:hover{
