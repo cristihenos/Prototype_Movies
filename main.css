@@ -9,65 +9,64 @@ body{
 
 #Table1{
 	width: 500px;
-	padding: 20px;
-	margin-top: 20px;
+	padding: 10px;
+	margin-top: 15px;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 ol{
-
     padding: 15px;
     margin-right: auto;
     margin-left: auto;
 }
 
 li{
-	border: 1px solid blackl
-	padding: 15px;
+    border: 1px solid blackl
+    padding: 15px;
 }
 
 td{
-	height: 40px;
-	text-align: center;
+    height: 40px;
+    text-align: center;
 }
 
 input{
-	width: 550px;
-	height:50px;
+    width: 550px; 
+    height:50px;
 }
 
 input:hover{
-	background-color: #F3F781;
+     background-color: #F3F781;
 }
 
 textarea{
- 	width: 550px;
- 	height:50px;
+     width: 550px;
+     height:50px;
  }
 
  textarea:hover{
- 	background-color: #F3F781;
+     background-color: #F3F781;
  }
 
 #Send{
-	width: 350px;
+    width: 350px;
 }
 
 #LitleNote{
-	position: sticky;
-	border:1px solid black;
-	padding: 10px;
-	width: 150px;
-	height: 150px;
-	background-color: yellow;
-	top:0;
-	float: right;
+    position: sticky;
+    border:1px solid black;
+    padding: 10px;
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    top:0;
+    float: right;
 }
 
 
 .checkbox{
-	margin:5px;
-	width: 30px;
- 	height:30px;
+    margin:5px;
+    width: 30px;
+    height:30px;
 }
