@@ -135,8 +135,9 @@ function load() {
 
   };   // Se termina SubmitControl;
 
-    function renderMovies(){
-      IdUls.innerHTML ='<i class="list-group-item list-group-item-action list-group-item-warning">'+'Exemplu Notita:'+'</i>';
+    function renderMovies() {
+      
+      IdUls.innerHTML ='<div id="Exemple" class="list-group-item list-group-item-action list-group-item-warning">'+'Exemplu Notita:'+'</div>';
       movies.forEach(function(movies) {
       submitButton.innerHTML = 'Trimite';
       IdUls.innerHTML +=
@@ -158,6 +159,7 @@ function load() {
        IdUls.removeChild(IdUls.childNodes[0]);
     };
 
+
     // Salveaza datele in local JOSN 
     window.localStorage.setItem('movies', JSON.stringify(movies));
     CountObjAndstop();
@@ -165,7 +167,7 @@ function load() {
 
    function CountObjAndstop(){
     let countObj = movies.length;
-     if (countObj>=8){
+     if (countObj>=8) {
         // Creem Atrbutul Disable pentru button si style pentru mesaj.
         let ParentElem=document.getElementById('Send'); 
         SelectMessage.innerHTML='<li class="list-group-item list-group-item-danger">'+'Mai mult de 8 filme nu poti sa adaugi!'+'</li>';
@@ -176,9 +178,17 @@ function load() {
 
     SelectPrint.addEventListener('click',printOne);
       function printOne() {
-         var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+         let WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
          WinPrint.document.write(IdUls.innerHTML);
+         WinPrint.document.close();
+         WinPrint.focus();
          WinPrint.print();
-     };
-    };
+         WinPrint.close();
+      };
+  };
 window.addEventListener('load', load);
+
+// 
+
+// 
+//     
