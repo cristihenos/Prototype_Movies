@@ -155,9 +155,9 @@ function load() {
     SelectButtonRemove.addEventListener('click',removeElement)
 
     //  Remove Element din IdUls.
-     function removeElement() {
-       IdUls.removeChild(IdUls.childNodes[0]);
-    };
+//      function removeElement() {
+//        IdUls.removeChild(IdUls.childNodes[0]);
+//     };
 
 
     // Salveaza datele in local JOSN 
