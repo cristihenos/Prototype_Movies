@@ -161,9 +161,9 @@ function load() {
 
 
     // Salveaza datele in local JOSN 
-//     window.localStorage.setItem('movies', JSON.stringify(movies));
-//     CountObjAndstop();
-//     };
+    window.localStorage.setItem('movies', JSON.stringify(movies));
+    CountObjAndstop();
+    };
 
    function CountObjAndstop(){
     let countObj = movies.length;
