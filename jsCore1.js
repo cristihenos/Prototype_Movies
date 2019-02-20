@@ -1,194 +1,237 @@
 function load() {
 
-    let FromTable=document.getElementById('add-movie-form');
-    let IdUls=document.getElementById('ListOfmovies');
-    let FieldYears=document.getElementById('Field-years');
-    let InputSelectAll=document.getElementsByTagName('input');
-    let TextArea=document.getElementsByTagName('textarea');
-    let SelectSE=document.getElementsByTagName('select');
-    let SelectMessage=document.getElementById('Message1');
-    let SelectButtonRemove=document.getElementById('remove');
-    const submitButton = document.getElementById('Send');
-    let ValforidLI=Math.floor((Math.random() * 9999) + 1);
-    let SelectLi=document.getElementsByTagName('li');
-    let SelectPrint=document.getElementById('printOne');
+let ArrayMovies=[];
 
-    // Const obj cu array
-    let movies= [{
-      Data: new Date().toLocaleString(),
-      movie: 'Home Alone',
-      years: 1990,
-      scoring:5,
-      SortDescription:'Il sugerez cu mare placere!',
-      gender:'Comedie'
-    }];
+//<button>
+let selectBtns0=document.querySelector('#Btns0');
 
-    renderMovies();
+//<div>
+let selectDiv4=document.querySelector('#show_meReturn');
+let selectDiv3=document.querySelector('#array1');
+let selectDiv2=document.querySelector('#ListOfmovies');
+let selectDiv1=document.querySelector('#msg1');
+let selectDiv0=document.querySelector('#show_me');
 
-    FromTable.addEventListener('submit', SubmitControl);
-    function SubmitControl (event) {
-    
-    event.preventDefault();
-    let Time1=setTimeout(Time2Sec,1500);
-    function Time2Sec() {
-      submitButton.innerHTML = '🔃 Adauga Filme!';
-    }
-      // Verifa inputurile
-      for (i=0; InputSelectAll.length>i; i++) {
+// Hide <button>
+selectDiv4.setAttribute("hidden", "");
 
-      if (isNaN(FieldYears.value)) {
-        FieldYears.style.border = '1px solid red';
-        FieldYears.style.background = '#F6CECE';
-        SelectMessage.innerHTML='<li class="list-group-item list-group-item-danger">'+'Verifica campul "Anul aparitiei:" sa fie doar cifre'+'</li>';
+
+// Onclick pe ShowME
+selectBtns0.addEventListener('click', showMe);
+  function showMe(){
+      selectDiv4.removeAttribute("hidden");
+      selectDiv4.innerHTML='▲';
+      selectBtns0.setAttribute("hidden", "");
+      selectDiv0.innerHTML=
+      `  <form action="filmelemeleass.html" id="add-movie-form" method="POST" >
+                <table id="Table1" class="table table-sm table-dark">
+                    <tr><td>Nume Film:<input name="movie" type="text" class="form-control form-control-sm"></td></tr>
+                    <tr><td>Anul aparitiei:<input name="years" type="text" maxlength="4" id="fieldYears" class="form-control form-control-sm"></td></tr>
+                    <tr><td>Gen:<select name="gender" class="form-control form-control-sm">
+                        option value="Actiune">Actiune</option>
+                        <option value="Aventuri" selected="">Aventuri</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Familie">Familie</option>
+                        <option value="Comedie">Comedie</option>
+                        <option value="Dragoste">Dragoste</option>
+                        <option value="Triller">Triller</option>
+                        </select></td></tr>
+                    <tr><td>Notita personala <p class="small">Max. 50 de caractere!</p><textarea name="SortDescription" maxlength="51" class="form-control form-control-sm"></textarea></td></tr>
+                     <tr><td>Adauga o nota:<select name="scoring" class="form-control form-control-sm">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5" selected="">5</option>
+                        </select></td></tr>
+                    <tr><td colspan="2"><button type="submit" class="btn btn-primary" id="Send" >Trimite</button></td></tr>
+                    </table>
+                </form>
+          <div id="buttons1"><button class="btn btn-primary" id="reMove">Remove</button>
+            <button class="btn btn-primary" id="printOne" >Printeaza</button>
+              </div>
+           <ul>
+             <li class="list-group-item list-group-item-action list-group-item-warning">Exemplu Notita:</li>
+             <li class="list-group-item" id='ex1'>
+             Film: <strong>Home Alone</strong><br>
+             Data adaugare: <strong>2/19/2019, 10:19:48 PM</strong><br>
+             Anul aparitiei: <strong>Avatar</strong><br>
+             Gen :<strong>Animatie</strong><br>
+             Notita personala:<strong>Super interesant!</strong><br>
+             Nota acordata: <strong>5</strong></li>
+         </ul>
+      `;
+
+// Remove Element si indice din Array
+      document.querySelector('#reMove').addEventListener('click',removeElement);
+     function removeElement() {
+      ArrayMovies.splice(0,1);
+      selectDiv2.removeChild(selectDiv2.childNodes[0]);
+      console.log(ArrayMovies);
+      };
+
+// PrintElement
+      document.querySelector('#printOne').addEventListener('click',printOne);
+      function printOne() {
+      let WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+      WinPrint.document.write(selectDiv2.innerHTML);
+      WinPrint.document.close();
+      WinPrint.focus();
+      WinPrint.print();
+      WinPrint.close();
+      };
+
+// Select <form>
+      let selectForm0=document.querySelector('#add-movie-form');
+
+// Submit event 
+       selectForm0.addEventListener('submit', submitControl);
+
+      function submitControl (event) {
+       event.preventDefault();
+       
+  // Selict <input>
+      let inputSelectAll=document.getElementsByTagName('input');
+      let textArea=document.getElementsByTagName('textarea');
+      let selectSE=document.getElementsByTagName('select');
+      let fieldYears=document.getElementById('fieldYears');
+
+        // Verifica inputurile
+      for (i=0; inputSelectAll.length>i; i++) {
+
+      if (isNaN(fieldYears.value)) {
+        fieldYears.style.border = '1px solid red';
+        fieldYears.style.background = '#F6CECE';
+        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Verifica campul "Anul aparitiei:" sa fie doar cifre'+'</li>';
         return;
       };
 
-      if (InputSelectAll[i].value=='' ) {
-        InputSelectAll[i].style.border = '1px solid red';
-        InputSelectAll[i].style.background = '#F6CECE';
-        SelectMessage.innerHTML='<li class="list-group-item list-group-item-danger">'+'Verifica datele introduse!'+'</li>';
+      if (inputSelectAll[i].value=='' ) {
+        inputSelectAll[i].style.border = '1px solid red';
+        inputSelectAll[i].style.background = '#F6CECE';
+        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Verifica datele introduse!'+'</li>';
         return;
 
       }else {
-        InputSelectAll[i].style.border = '';
-        InputSelectAll[i].style.background = '';
-        SelectMessage.innerHTML='<p class="list-group-item list-group-item-success">'+'Filmul a fost adaugat!'+'</p>';
+        inputSelectAll[i].style.border = '';
+        inputSelectAll[i].style.background = '';
       };
 
-      if (InputSelectAll[i].value.length>35 ) {
-        InputSelectAll[i].style.border = '1px solid red';
-        InputSelectAll[i].style.background = '#F6CECE';
-        SelectMessage.innerHTML='<li class="list-group-item list-group-item-danger">'+'Ai introdus mai mult de 35 de caractere!'+'</li>';
+      if (inputSelectAll[i].value.length>35 ) {
+        inputSelectAll[i].style.border = '1px solid red';
+        inputSelectAll[i].style.background = '#F6CECE';
+        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Ai introdus mai mult de 35 de caractere!'+'</li>';
         return;
 
       }else {
-        InputSelectAll[i].style.border = '';
-        InputSelectAll[i].style.background = '';
-        SelectMessage.innerHTML='<p class="list-group-item list-group-item-success">'+'Filmul a fost adaugat!'+'</p>';
+        inputSelectAll[i].style.border = '';
+        inputSelectAll[i].style.background = '';
       };
     };  // Se termina bucla pentru Input
 
-    // Verifica Texarea
-    for (i=0; TextArea.length>i; i++) {
+// Verifica Texarea
+    for (i=0; textArea.length>i; i++) {
 
-      if (TextArea[i].value=='') {
-        TextArea[i].style.border = '1px solid red';
-        TextArea[i].style.background = '#F6CECE';
-        SelectMessage.innerHTML='<li class="list-group-item list-group-item-danger">'+'Campul "Notita personala:" este gol '+'</li>';
+      if (textArea[i].value=='') {
+        textArea[i].style.border = '1px solid red';
+        textArea[i].style.background = '#F6CECE';
+        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Campul "Notita personala:" este gol '+'</li>';
         return;
       };
 
-      if (TextArea[i].value.length>50) {
-        TextArea[i].style.border = '1px solid red';
-        TextArea[i].style.background = '#F6CECE';
-        SelectMessage.innerHTML='<li class="list-group-item list-group-item-danger">'+'Ai introdus mai mult de 50 de caractere in "Campul "Notita personala:'+'</li>';
+      if (textArea[i].value.length>50) {
+        textArea[i].style.border = '1px solid red';
+        textArea[i].style.background = '#F6CECE';
+        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Ai introdus mai mult de 50 de caractere in "Campul "Notita personala:'+'</li>';
         return;
 
       }else {
-        TextArea[i].style.border = '';
-        TextArea[i].style.background = '';
-        SelectMessage.innerHTML='<p class="list-group-item list-group-item-success">'+'Filmul a fost adaugat!'+'</p>';
+        textArea[i].style.border = '';
+        textArea[i].style.background = '';
       };
     };  // Se termina bucla pentru Texarea
 
-      for (i=0; SelectSE.length>i; i++) {
+      for (i=0; selectSE.length>i; i++) {
 
-      if (SelectSE[i].value=='') {
-        SelectSE[i].style.border = '1px solid red';
-        SelectSE[i].style.background = '#F6CECE';
-        SelectMessage.innerHTML='<li class="list-group-item list-group-item-danger">'+'Selecteaza optiunea!'+'</li>';
+      if (selectSE[i].value=='') {
+        selectSE[i].style.border = '1px solid red';
+        selectSE[i].style.background = '#F6CECE';
+        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Selecteaza optiunea!'+'</li>';
         return;
 
       }else {
-        SelectSE[i].style.border = '';
-        SelectSE[i].style.background = '';
-        SelectMessage.innerHTML='<p class="list-group-item list-group-item-success">'+'Filmul a fost adaugat!'+'</p>';
+        selectSE[i].style.border = '';
+        selectSE[i].style.background = '';
+        selectDiv1.innerHTML='<p class="list-group-item list-group-item-success">'+'Filmul a fost adaugat!'+'</p>';
       }
 
     }; // Se termina bucla pentru Select
 
-   // citim datele dupa campul name 
-    let movie = event.target.movie.value;
-    let years = +event.target.years.value;
-    let scoring = +event.target.scoring.value;
-    let SortDescription = event.target.SortDescription.value;
-    let gender = event.target.gender.value;
-    let Data= new Date().toLocaleString();
+      let movie = event.target.movie.value;
+      let years = +event.target.years.value;
+      let scoring = +event.target.scoring.value;
+      let SortDescription = event.target.SortDescription.value;
+      let gender = event.target.gender.value;
+      let Data= new Date().toLocaleString();
+      let DataMovies={Data,movie,years,scoring,SortDescription,gender};
+      DataMovies.constructor;
 
-    // suprascriem #ListOfmovies cu datele noi
-      movies.push({
-      Data:Data,
-      movie: movie,
-      years: years,
-      scoring:scoring,
-      SortDescription:SortDescription,
-      gender:gender,
-    });
+      ArrayMovies.push(DataMovies);
 
-    renderMovies();
-    // stergem datele din Movie, an, scoring, etc.
-    event.target.movie.value = '';
-    event.target.years.value = '';
-    event.target.scoring.value = '';
-    event.target.SortDescription.value ='';
-    event.target.gender.value ='';
+      renderMovies();
 
-  };   // Se termina SubmitControl;
+// Stergem datele din <form>, an, scoring, etc.
+     event.target.movie.value = '';
+     event.target.years.value = '';
+     event.target.scoring.value = '';
+     event.target.SortDescription.value ='';
+     event.target.gender.value ='';
 
-    function renderMovies() {
-      
-      IdUls.innerHTML ='<div id="Exemple" class="list-group-item list-group-item-action list-group-item-warning">'+'Exemplu Notita:'+'</div>';
-      movies.forEach(function(movies) {
-      submitButton.innerHTML = 'Trimite';
-      IdUls.innerHTML +=
-      ` <li class="list-group-item" id=${ValforidLI++}>
-        Film: <strong>${movies.movie}</strong><br>
-        Data adaugare: <strong>${movies.Data}</strong><br>
-        Anul aparitiei: <strong>${movies.years}</strong><br>
-        Gen :<strong>${movies.gender}</strong><br>
-        Notita personala: <strong> ${movies.SortDescription}</strong><br>
-        Nota acordata: <strong>${movies.scoring}</strong><br>
+     
+// Functia de renderMovies
+     function renderMovies() {
+      selectDiv2.innerHTML +=
+      ` <li class="list-group-item">
+        Film: <strong>${DataMovies.movie}</strong><br>
+        Data adaugare: <strong>${DataMovies.Data}</strong><br>
+        Anul aparitiei: <strong>${DataMovies.years}</strong><br>
+        Gen :<strong>${DataMovies.gender}</strong><br>
+        Notita personala: <strong> ${DataMovies.SortDescription}</strong><br>
+        Nota acordata: <strong>${DataMovies.scoring}</strong><br>
         </li><br>
-      `;
-    });
+          `;
+          console.log(ArrayMovies);
+        }; 
 
-    SelectButtonRemove.addEventListener('click',removeElement)
+        CountObjAndstop();
 
-    //  Remove Element din IdUls.
-     function removeElement() {
-       IdUls.removeChild(IdUls.childNodes[0]);
-    };
+// Salveaza datele in local format JOSN 
+     window.localStorage.setItem('movies', JSON.stringify(ArrayMovies));
+      };
 
+    }; // Functia ShowME
 
-    // Salveaza datele in local JOSN 
-    window.localStorage.setItem('movies', JSON.stringify(movies));
-    CountObjAndstop();
-    };
-
-   function CountObjAndstop(){
-    let countObj = movies.length;
-     if (countObj>=8) {
+    function CountObjAndstop(){
+   
+     if (ArrayMovies.length>7) {
         // Creem Atrbutul Disable pentru button si style pentru mesaj.
-        let ParentElem=document.getElementById('Send'); 
-        SelectMessage.innerHTML='<li class="list-group-item list-group-item-danger">'+'Mai mult de 8 filme nu poti sa adaugi!'+'</li>';
+        let ParentElem=document.querySelector('#Send'); 
+        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Mai mult de 8 filme nu poti sa adaugi!'+'</li>';
         ParentElem.setAttribute("disabled", "disabled");
         ParentElem.setAttribute("class", "btn btn-secondary");
-     };
+     }
+      return
     };
 
-    SelectPrint.addEventListener('click',printOne);
-      function printOne() {
-         let WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
-         WinPrint.document.write(IdUls.innerHTML);
-         WinPrint.document.close();
-         WinPrint.focus();
-         WinPrint.print();
-         WinPrint.close();
-      };
-  };
+
+    document.querySelector('#show_meReturn').addEventListener('click', removeshowMe);
+    function removeshowMe () {
+      selectDiv0.innerHTML='';
+      selectDiv1.innerHTML='';
+      selectDiv2.innerHTML='';
+      selectBtns0.removeAttribute("hidden");
+      selectDiv4.setAttribute("hidden", "");
+    }
+};
 window.addEventListener('load', load);
 
-// 
-
-// 
-//     
