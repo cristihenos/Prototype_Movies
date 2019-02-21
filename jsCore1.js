@@ -58,6 +58,7 @@ selectBtns0.addEventListener('click', showMe);
       ArrayMovies.splice(0,1);
       let elem=document.querySelector('#del')
       elem.parentNode.removeChild(elem);
+      selectDiv1.innerHTML='';
       };
 
 // PrintElement
