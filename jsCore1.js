@@ -50,14 +50,24 @@ selectBtns0.addEventListener('click', showMe);
           <div id="buttons1"><button class="btn btn-primary" id="reMove">Remove</button>
             <button class="btn btn-primary" id="printOne" >Printeaza</button>
               </div>
+           <ul>
+             <li class="list-group-item list-group-item-action list-group-item-warning">Exemplu Notita:</li>
+             <li class="list-group-item" id='ex1'>
+             Film: <strong>Home Alone</strong><br>
+             Data adaugare: <strong>2/19/2019, 10:19:48 PM</strong><br>
+             Anul aparitiei: <strong>Avatar</strong><br>
+             Gen :<strong>Animatie</strong><br>
+             Notita personala:<strong>Super interesant!</strong><br>
+             Nota acordata: <strong>5</strong></li>
+         </ul>
       `;
 
 // Remove Element si indice din Array
       document.querySelector('#reMove').addEventListener('click',removeElement);
      function removeElement() {
       ArrayMovies.splice(0,1);
-      selectDiv2.removeChild(selectDiv2.childNodes[0]);
-      console.log(ArrayMovies);
+      let elem=document.querySelector('#del')
+      elem.parentNode.removeChild(elem);
       };
 
 // PrintElement
@@ -181,7 +191,7 @@ selectBtns0.addEventListener('click', showMe);
 // Functia de renderMovies
      function renderMovies() {
       selectDiv2.innerHTML +=
-      ` <li class="list-group-item">
+      ` <li class="list-group-item" id='del'>
         Film: <strong>${DataMovies.movie}</strong><br>
         Data adaugare: <strong>${DataMovies.Data}</strong><br>
         Anul aparitiei: <strong>${DataMovies.years}</strong><br>
@@ -190,7 +200,6 @@ selectBtns0.addEventListener('click', showMe);
         Nota acordata: <strong>${DataMovies.scoring}</strong><br>
         </li><br>
           `;
-          console.log(ArrayMovies);
         }; 
 
         CountObjAndstop();
