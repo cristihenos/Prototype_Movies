@@ -65,7 +65,7 @@ selectBtns0.addEventListener('click', showMe);
                 </form>
               <div id="buttons1"><button class="btn btn-primary" id="reMove"><p id="p13">Elimina</p></button>
                 <button class="btn btn-primary" id="printOne"><p id="p14">Printeaza</p></button>
-                  </div><br>
+                  </div>
       `;
         let selectBtns1=document.querySelector('#Btns1');
         let selectLAN=document.querySelector('#Lan');
@@ -265,7 +265,7 @@ selectBtns0.addEventListener('click', showMe);
         Gen :<strong>${DataMovies.gender}</strong><br>
         Notita personala: <strong> ${DataMovies.SortDescription}</strong><br>
         Nota acordata: <strong>${DataMovies.scoring}</strong><br>
-        </li><br>
+        </li>
           `;
         }; 
         CountObjAndstop();
