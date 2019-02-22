@@ -258,7 +258,7 @@ selectBtns0.addEventListener('click', showMe);
 // Functia de renderMovies
      function renderMovies() {
       selectDiv2.innerHTML +=
-      ` <li class="list-group-item" id='del'>
+      ` <li class="list-group-item list-group-item-dark" id='del'>
         Film: <strong>${DataMovies.movie}</strong><br>
         Data adaugare: <strong>${DataMovies.Data}</strong><br>
         Anul aparitiei: <strong>${DataMovies.years}</strong><br>
