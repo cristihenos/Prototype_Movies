@@ -16,6 +16,11 @@ ol{
     padding: 15px;
 }
 
+p{	padding: 5px;
+	width: auto;
+	height: auto;
+}
+
 li{
 	width:auto;
 	height: auto;
@@ -42,6 +47,7 @@ textarea{
 
 #Send{
 	width: 250px;
+	height: 50px;
 }
 
 #LitleNote{
@@ -54,7 +60,6 @@ textarea{
 	top:0;
 	float: right;
 }
-
 
 .checkbox{
 	margin:5px;
@@ -71,8 +76,6 @@ textarea{
 #buttons1{
 	display: flex;
 	justify-content:space-around;
-	width: auto;
-	height: auto;
-	padding: 20px;
-	margin: auto;
+	height: 50px;
 }	
+
