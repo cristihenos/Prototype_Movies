@@ -2,9 +2,9 @@ function load() {
 
 let ArrayMovies=[];
 let ErrorMesFieldYears='<li class="list-group-item list-group-item-danger">'+'Verifica campul An!'+'</li>';
-let ErrorMesinputSelectAll='<li class="list-group-item list-group-item-danger">'+'Verifica campul Nume!'+'</li>';
+let ErrorMesinputSelectAll='<li class="list-group-item list-group-item-danger">'+'Verifica campurile!!'+'</li>';
 let ErrorMestextArea='<li class="list-group-item list-group-item-danger">'+'Verifica campul Comentariu!'+'</li>';
-let ErrorMesselectSE='<li class="list-group-item list-group-item-danger">'+'Alege Genul filmului!'+'</li>';
+let ErrorMesselectSE='<li class="list-group-item list-group-item-danger">'+'Verifica campurile!'+'</li>';
 let SuccessMes='<p class="list-group-item list-group-item-success">'+'Filmul a fost adaugat!'+'</p>';
 
 //<button>
