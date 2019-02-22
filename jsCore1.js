@@ -1,11 +1,11 @@
 function load() {
 
 let ArrayMovies=[];
-let ErrorMesFieldYears='';
-let ErrorMesinputSelectAll='';
-let ErrorMestextArea='';
-let ErrorMesselectSE='';
-let SuccessMes='';
+let ErrorMesFieldYears='<li class="list-group-item list-group-item-danger">'+'Verifica campul An!'+'</li>';
+let ErrorMesinputSelectAll='<li class="list-group-item list-group-item-danger">'+'Verifica campul Nume!'+'</li>';
+let ErrorMestextArea='<li class="list-group-item list-group-item-danger">'+'Verifica campul Comentariu!'+'</li>';
+let ErrorMesselectSE='<li class="list-group-item list-group-item-danger">'+'Alege Genul filmului!'+'</li>';
+let SuccessMes='<p class="list-group-item list-group-item-success">'+'Filmul a fost adaugat!'+'</p>';
 
 //<button>
 let selectBtns0=document.querySelector('#Btns0');
@@ -65,7 +65,7 @@ selectBtns0.addEventListener('click', showMe);
                 </form>
               <div id="buttons1"><button class="btn btn-primary" id="reMove"><p id="p13">Elimina</p></button>
                 <button class="btn btn-primary" id="printOne"><p id="p14">Printeaza</p></button>
-                  </div>
+                  </div><br>
       `;
         let selectBtns1=document.querySelector('#Btns1');
         let selectLAN=document.querySelector('#Lan');
@@ -265,7 +265,7 @@ selectBtns0.addEventListener('click', showMe);
         Gen :<strong>${DataMovies.gender}</strong><br>
         Notita personala: <strong> ${DataMovies.SortDescription}</strong><br>
         Nota acordata: <strong>${DataMovies.scoring}</strong><br>
-        </li>
+        </li><br>
           `;
         }; 
         CountObjAndstop();
