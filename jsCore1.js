@@ -1,6 +1,11 @@
 function load() {
 
 let ArrayMovies=[];
+let ErrorMesFieldYears='';
+let ErrorMesinputSelectAll='';
+let ErrorMestextArea='';
+let ErrorMesselectSE='';
+let SuccessMes='';
 
 //<button>
 let selectBtns0=document.querySelector('#Btns0');
@@ -15,7 +20,6 @@ let selectDiv0=document.querySelector('#show_me');
 // Hide <button>
 selectDiv4.setAttribute("hidden", "");
 
-
 // Onclick pe ShowME
 selectBtns0.addEventListener('click', showMe);
   function showMe(){
@@ -23,42 +27,113 @@ selectBtns0.addEventListener('click', showMe);
       selectDiv4.innerHTML='▲';
       selectBtns0.setAttribute("hidden", "");
       selectDiv0.innerHTML=
-      `  <form action="filmelemeleass.html" id="add-movie-form" method="POST" >
+      ` <br>
+        <div><h5>Language:</h5>
+          <select name='Language'>
+              <option value="1">English</option>
+              <option value="2">Italiano</option>
+              <option value="3">Romana</option>
+                </select>
+             <button id='Btns1' class="btn btn-warning">Go!</button>
+            </div><br>
+            <form action="filmelemeleass.html" id="add-movie-form" method="POST" >
                 <table id="Table1" class="table table-sm table-dark">
-                    <tr><td>Nume Film:<input name="movie" type="text" class="form-control form-control-sm"></td></tr>
-                    <tr><td>Anul aparitiei:<input name="years" type="text" maxlength="4" id="fieldYears" class="form-control form-control-sm"></td></tr>
-                    <tr><td>Gen:<select name="gender" class="form-control form-control-sm">
-                        option value="Actiune">Actiune</option>
-                        <option value="Aventuri" selected="">Aventuri</option>
-                        <option value="Horror">Horror</option>
-                        <option value="Familie">Familie</option>
-                        <option value="Comedie">Comedie</option>
-                        <option value="Dragoste">Dragoste</option>
-                        <option value="Triller">Triller</option>
+                    <tr><td><p id="p1">Numele Filmului:</p><input name="movie" type="text" class="form-control form-control-sm"></td></tr>
+                    <tr><td><p id="p2">An:</p><input name="years" type="text" maxlength="4" id="fieldYears" class="form-control form-control-sm"></td></tr>
+                    <tr><td><p id="p3">Gen:</p>
+                      <select name="gender" class="form-control form-control-sm">
+                          <option value="Actiune" id="p4">Actiune</option>
+                          <option value="Aventuri" selected="" id="p5">Aventuri</option>
+                          <option value="Horror">Horror</option>
+                          <option value="Familie" id="p6">Documentar</option>
+                          <option value="Comedie" id="p7">Comedie</option>
+                          <option value="Dragoste" id="p8">Dragoste</option>
+                          <option value="Triller">Triller</option>
+                          <option value="SF">SF</option>
                         </select></td></tr>
-                    <tr><td>Notita personala <p class="small">Max. 50 de caractere!</p><textarea name="SortDescription" maxlength="51" class="form-control form-control-sm"></textarea></td></tr>
-                     <tr><td>Adauga o nota:<select name="scoring" class="form-control form-control-sm">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5" selected="">5</option>
-                        </select></td></tr>
-                    <tr><td colspan="2"><button type="submit" class="btn btn-primary" id="Send" >Trimite</button></td></tr>
+                    <tr><td><p id="p9">Comentariu</p><p id="p10" class="small">Max. 50 de caractere!</p><textarea name="SortDescription" maxlength="51" class="form-control form-control-sm"></textarea></td></tr>
+                     <tr><td><p id="p11">Nota:</p>
+                      <select name="scoring" class="form-control form-control-sm">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5" selected="">5</option>
+                      </select></td></tr>
+                    <tr><td colspan="2"><button type="submit" class="btn btn-primary" id="Send"><p id="p12">Trimite</p></button></td></tr>
                     </table>
                 </form>
-          <div id="buttons1"><button class="btn btn-primary" id="reMove">Remove</button>
-            <button class="btn btn-primary" id="printOne" >Printeaza</button>
-              </div>
+              <div id="buttons1"><button class="btn btn-primary" id="reMove"><p id="p13">Elimina</p></button>
+                <button class="btn btn-primary" id="printOne"><p id="p14">Printeaza</p></button>
+                  </div><br>
       `;
+        let selectBtns1=document.querySelector('#Btns1');
+        let selectLAN=document.querySelector('#Lan');
+        let selectreMove=document.querySelector('#reMove');
 
 // Remove Element si indice din Array
-      document.querySelector('#reMove').addEventListener('click',removeElement);
+      selectreMove.addEventListener('click',removeElement);
      function removeElement() {
+      selectreMove.removeAttribute("hidden");
       ArrayMovies.splice(0,1);
       let elem=document.querySelector('#del')
       elem.parentNode.removeChild(elem);
       selectDiv1.innerHTML='';
+      };
+
+// Schimba Limba
+
+      selectBtns1.addEventListener('click',changeLanguage);
+      function changeLanguage (){
+      let language = document.getElementsByTagName('select')[0].value;
+        switch (language) {
+          case '1':
+                document.querySelector('#p1').innerHTML='Movie name:';
+                document.querySelector('#p2').innerHTML='Year:';
+                document.querySelector('#p3').innerHTML='Categorie:';
+                document.querySelector('#p4').innerHTML='Action';
+                document.querySelector('#p5').innerHTML='Adventure';
+                document.querySelector('#p6').innerHTML='Documentary';
+                document.querySelector('#p7').innerHTML='Comedy';
+                document.querySelector('#p8').innerHTML='Love';
+                document.querySelector('#p9').innerHTML='Reviews:';
+                document.querySelector('#p10').innerHTML='Max. 50 characters!';
+                document.querySelector('#p11').innerHTML='Stars:';
+                document.querySelector('#p12').innerHTML='Search';
+                document.querySelector('#p13').innerHTML='Remove note';
+                document.querySelector('#p14').innerHTML='Print';
+                ErrorMesFieldYears='<li class="list-group-item list-group-item-danger">'+'Check the Year field'+'</li>';
+                ErrorMesinputSelectAll='<li class="list-group-item list-group-item-danger">'+'Check data in the field!'+'</li>';
+                ErrorMestextArea='<li class="list-group-item list-group-item-danger">'+'Check data in the text field!'+'</li>';
+                ErrorMesselectSE='<li class="list-group-item list-group-item-danger">'+'Select field!'+'</li>';
+                SuccessMes='<p class="list-group-item list-group-item-success">'+'The movie was added!'+'</p>';
+            break;
+          case '2':
+                document.querySelector('#p1').innerHTML='Nome del film:';
+                document.querySelector('#p2').innerHTML='Anno:';
+                document.querySelector('#p3').innerHTML='Generi:';
+                document.querySelector('#p4').innerHTML='Azione';
+                document.querySelector('#p5').innerHTML='Avventura';
+                document.querySelector('#p6').innerHTML='Documentario';
+                document.querySelector('#p7').innerHTML='Comico';
+                document.querySelector('#p8').innerHTML='Sentimentale';
+                document.querySelector('#p9').innerHTML='Recensione:';
+                document.querySelector('#p10').innerHTML='Mas. 50 caratteri!';
+                document.querySelector('#p11').innerHTML='Stelle:';
+                document.querySelector('#p12').innerHTML='Cerca';
+                document.querySelector('#p13').innerHTML='Rimuovi';
+                document.querySelector('#p14').innerHTML='Stampa';
+                ErrorMesFieldYears='<li class="list-group-item list-group-item-danger">'+'Verifica il campo Anno!'+'</li>';
+                ErrorMesinputSelectAll='<li class="list-group-item list-group-item-danger">'+'Verifica il campo Nome del film!'+'</li>';
+                ErrorMestextArea='<li class="list-group-item list-group-item-danger">'+'Verifica il campo Nota Personale'+'</li>';
+                ErrorMesselectSE='<li class="list-group-item list-group-item-danger">'+'Scegli un genere!'+'</li>';
+                SuccessMes='<p class="list-group-item list-group-item-success">'+'Il film è stato aggiunto!'+'</p>';
+            break;
+                
+          case '3':
+                showMe();
+            break;
+        };
       };
 
 // PrintElement
@@ -93,14 +168,15 @@ selectBtns0.addEventListener('click', showMe);
       if (isNaN(fieldYears.value)) {
         fieldYears.style.border = '1px solid red';
         fieldYears.style.background = '#F6CECE';
-        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Verifica campul "Anul aparitiei:" sa fie doar cifre'+'</li>';
+        selectDiv1.innerHTML=ErrorMesFieldYears;
+       
         return;
       };
 
       if (inputSelectAll[i].value=='' ) {
         inputSelectAll[i].style.border = '1px solid red';
         inputSelectAll[i].style.background = '#F6CECE';
-        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Verifica datele introduse!'+'</li>';
+        selectDiv1.innerHTML=ErrorMesinputSelectAll;
         return;
 
       }else {
@@ -111,7 +187,7 @@ selectBtns0.addEventListener('click', showMe);
       if (inputSelectAll[i].value.length>35 ) {
         inputSelectAll[i].style.border = '1px solid red';
         inputSelectAll[i].style.background = '#F6CECE';
-        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Ai introdus mai mult de 35 de caractere!'+'</li>';
+        selectDiv1.innerHTML=ErrorMesinputSelectAll;
         return;
 
       }else {
@@ -126,14 +202,14 @@ selectBtns0.addEventListener('click', showMe);
       if (textArea[i].value=='') {
         textArea[i].style.border = '1px solid red';
         textArea[i].style.background = '#F6CECE';
-        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Campul "Notita personala:" este gol '+'</li>';
+        selectDiv1.innerHTML=ErrorMestextArea;
         return;
       };
 
       if (textArea[i].value.length>50) {
         textArea[i].style.border = '1px solid red';
         textArea[i].style.background = '#F6CECE';
-        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Ai introdus mai mult de 50 de caractere in "Campul "Notita personala:'+'</li>';
+        selectDiv1.innerHTML=ErrorMestextArea;
         return;
 
       }else {
@@ -147,14 +223,14 @@ selectBtns0.addEventListener('click', showMe);
       if (selectSE[i].value=='') {
         selectSE[i].style.border = '1px solid red';
         selectSE[i].style.background = '#F6CECE';
-        selectDiv1.innerHTML='<li class="list-group-item list-group-item-danger">'+'Selecteaza optiunea!'+'</li>';
+        selectDiv1.innerHTML=ErrorMesselectSE;
         return;
 
       }else {
         selectSE[i].style.border = '';
         selectSE[i].style.background = '';
-        selectDiv1.innerHTML='<p class="list-group-item list-group-item-success">'+'Filmul a fost adaugat!'+'</p>';
-      }
+        selectDiv1.innerHTML=SuccessMes;
+      };
 
     }; // Se termina bucla pentru Select
 
@@ -192,7 +268,6 @@ selectBtns0.addEventListener('click', showMe);
         </li><br>
           `;
         }; 
-
         CountObjAndstop();
 
 // Salveaza datele in local format JOSN 
@@ -213,7 +288,6 @@ selectBtns0.addEventListener('click', showMe);
       return
     };
 
-
     document.querySelector('#show_meReturn').addEventListener('click', removeshowMe);
     function removeshowMe () {
       selectDiv0.innerHTML='';
@@ -221,7 +295,7 @@ selectBtns0.addEventListener('click', showMe);
       selectDiv2.innerHTML='';
       selectBtns0.removeAttribute("hidden");
       selectDiv4.setAttribute("hidden", "");
-    }
+    };
 };
 window.addEventListener('load', load);
 
