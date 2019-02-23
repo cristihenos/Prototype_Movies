@@ -51,13 +51,13 @@ selectBtns0.addEventListener('click', showMe);
                           <option value="Triller">Triller</option>
                           <option value="SF">SF</option>
                         </select></td></tr>
-                    <tr><td><p id="p9">Comentariu</p><p id="p10" class="small">Max. 50 de caractere!</p><textarea name="SortDescription" maxlength="51" class="form-control form-control-sm"></textarea></td></tr>
+                    <tr><td><p id="p9">Comentariu:</p><p id="p10" class="small">Max. 50 de caractere!</p><textarea name="SortDescription" maxlength="51" class="form-control form-control-sm"></textarea></td></tr>
                      <tr><td><p id="p11">Nota:</p>
                       <select name="scoring" class="form-control form-control-sm">
                           <option value="1">★</option>
-                          <option value="2">★★</option>
-                          <option value="3">★★★</option>
-                          <option value="4">★★★★/option>
+                          <option value="2">★✩</option>
+                          <option value="3">★✩★</option>
+                          <option value="4">★✩★✩</option>
                           <option value="5" selected="">★★★★★</option>
                       </select></td></tr>
                     <tr><td colspan="2"><button type="submit" class="btn btn-primary" id="Send"><p id="p12">Trimite</p></button></td></tr>
@@ -264,7 +264,7 @@ selectBtns0.addEventListener('click', showMe);
         Anul aparitiei: <strong>${DataMovies.years}</strong><br>
         Gen :<strong>${DataMovies.gender}</strong><br>
         Notita personala: <strong> ${DataMovies.SortDescription}</strong><br>
-        Nota acordata: <strong>${DataMovies.scoring}</strong><br>
+        Nota: <strong>${DataMovies.scoring}</strong><strong>★</strong><br>
         </li><br>
           `;
         }; 
