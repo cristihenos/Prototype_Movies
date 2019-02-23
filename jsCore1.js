@@ -54,11 +54,11 @@ selectBtns0.addEventListener('click', showMe);
                     <tr><td><p id="p9">Comentariu</p><p id="p10" class="small">Max. 50 de caractere!</p><textarea name="SortDescription" maxlength="51" class="form-control form-control-sm"></textarea></td></tr>
                      <tr><td><p id="p11">Nota:</p>
                       <select name="scoring" class="form-control form-control-sm">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5" selected="">5</option>
+                          <option value="1">★</option>
+                          <option value="2">★★</option>
+                          <option value="3">★★★</option>
+                          <option value="4">★★★★/option>
+                          <option value="5" selected="">★★★★★</option>
                       </select></td></tr>
                     <tr><td colspan="2"><button type="submit" class="btn btn-primary" id="Send"><p id="p12">Trimite</p></button></td></tr>
                     </table>
