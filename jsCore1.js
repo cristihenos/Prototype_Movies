@@ -58,7 +58,7 @@ selectBtns0.addEventListener('click', showMe);
                           <option value="2">★✩</option>
                           <option value="3">★✩★</option>
                           <option value="4">★✩★✩</option>
-                          <option value="5" selected="">★★★★★</option>
+                          <option value="5" selected="">★✩★✩★</option>
                       </select></td></tr>
                     <tr><td colspan="2"><button type="submit" class="btn btn-primary" id="Send"><p id="p12">Trimite</p></button></td></tr>
                     </table>
